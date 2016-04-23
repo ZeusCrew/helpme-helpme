@@ -4,9 +4,9 @@ angular
 
 // Dependency injection. Done this way for minification purposes.
 // See https://docs.angularjs.org/tutorial/step_05 for more info on minification.
-GoalsController.$inject = ['$scope', 'auth', 'Goals'];
+GoalsController.$inject = ['$scope', 'auth', 'Goals', 'Profile'];
 
-function GoalsController($scope, auth, Goals) {
+function GoalsController($scope, auth, Goals, Profile) {
   // User information from our MongoDB
   $scope.user = {};
   // Form input fields
@@ -34,9 +34,16 @@ function GoalsController($scope, auth, Goals) {
       };
       Goals.addGoal($scope.profile.user_id, goal)
         .then(function(data) {
+          console.log(data);
           // Reset input fields to blank
           $scope.input.title = '';
           $scope.input.description = '';
+          //Add post at the same time, will now show automatically in main
+          var post = {
+              post: 'I\'ve set a new goal',
+              goal_id: data[data.length-1]._id
+          };
+          Profile.addPost($scope.profile.user_id, post)
           // Refresh goals
           $scope.getGoals();
         })
