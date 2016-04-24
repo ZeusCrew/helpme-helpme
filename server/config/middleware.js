@@ -11,7 +11,7 @@ app.use('/api/path-you-want-to-protect', jwtCheck);
 // AUTH0_CLIENT_ID, and AUTH0_DOMAIN is in your root directory (but don't commit it to git,
 // it should be gitignored).
 // uncomment line below to load your .env file then run your node server from that root directory or simply run 'gulp nodemon'
-// dotenv.load();
+dotenv.load();
 
 var jwtCheck = jwt({
   secret: new Buffer(process.env.AUTH0_CLIENT_SECRET, 'base64'),

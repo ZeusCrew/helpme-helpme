@@ -1,0 +1,32 @@
+<!-- Fixed header -->
+<div class="navbar navbar-inverse">
+  <h3 class="header-text">My Groups</h3>
+</div>
+
+<!-- Container for the rest of the page -->
+<div class="content-body">
+  <!-- Form panel for creating new groups -->
+  <div class="panel panel-default">
+    <form class="panel-body" >
+      <legend>Add New Group</legend>
+      <!-- Group name input -->
+      <div class="row">
+        <label class="col-md-2 control-label">Group Name:</label>
+        <div class="col-md-10">
+          <input class="form-control" type="text" ng-model="group.name"
+            placeholder="Name your group">
+        </div>
+      </div>
+      <br>
+      <!-- Group interests input -->
+      <div class="row">
+        <label class="col-md-2">Interests:</label>
+        <div class="col-md-10">
+          <textarea class="form-control" type="text" ng-model="group.interests"
+            placeholder="Excercise, Angular.js, investing?"></textarea>
+        </div>
+      </div>
+      <br>
+    </form>
+  </div>
+</div>
