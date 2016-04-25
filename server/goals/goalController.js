@@ -42,7 +42,10 @@ module.exports = {
             };
           }
         }
-        if (goal.complete) {user.numComplete += 1}
+        if (goal.complete) {
+          user.numComplete += 1;
+          Achievements.check(user);
+        }
         user.save();
         res.status(201).json(user.goals);
       });

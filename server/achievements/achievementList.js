@@ -15,13 +15,13 @@ module.exports = {
       quantity: 5,
     }, {
       name: "Mission accomplished",
-      icon: "oneComplete",
+      icon: "oneCompleted",
       description: "Complete one goal",
       target: "numComplete",
       quantity: 1,
     }, {
       name: "Moving right along",
-      icon: "fiveComplete",
+      icon: "fiveCompleted",
       description: "Complete five goals",
       target: "numComplete",
       quantity: 5,
