@@ -35,6 +35,9 @@ module.exports = function(app, express) {
   app.post('/api/comment/:user_id', postController.addComment);
   app.post('/api/signin/', userController.addUser);
 
+  app.post('/api/groups/', groupController.createGroup);
+  app.post('/api/groups/:group_name', groupController.joinGroup);
+
   // If a request is sent somewhere other than the routes above,
   // send it through our custom error handler
   app.use(helpers.errorLogger);

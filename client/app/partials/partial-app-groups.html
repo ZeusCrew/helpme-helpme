@@ -13,7 +13,7 @@
       <div class="row">
         <label class="col-md-2 control-label">Group Name:</label>
         <div class="col-md-10">
-          <input class="form-control" type="text" ng-model="group.name"
+          <input class="form-control" type="text" ng-model="name"
             placeholder="Name your group">
         </div>
       </div>
@@ -22,9 +22,12 @@
       <div class="row">
         <label class="col-md-2">Interests:</label>
         <div class="col-md-10">
-          <textarea class="form-control" type="text" ng-model="group.interests"
+          <textarea class="form-control" type="text" ng-model="interests"
             placeholder="Excercise, Angular.js, investing?"></textarea>
         </div>
+      </div>
+      <div>
+        <button class="btn btn-primary" ng-click="createGroup()">Submit</button>
       </div>
       <br>
     </form>
