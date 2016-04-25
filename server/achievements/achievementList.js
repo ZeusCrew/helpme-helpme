@@ -20,11 +20,29 @@ module.exports = {
       target: "numComplete",
       quantity: 1,
     }, {
+      name: "Moving right along",
+      icon: "fiveComplete",
+      description: "Complete five goals",
+      target: "numComplete",
+      quantity: 5,
+    }, {
+      name: "Change of plans",
+      icon: "oneAbandoned",
+      description: "Delete one incomplete goal",
+      target: "numDeletedIncomplete",
+      quantity: 1,
+    }, {
       name: "Quitter",
       icon: "fiveAbandoned",
       description: "Delete five incomplete goals",
       target: "numDeletedIncomplete",
       quantity: 5,
+    }, {
+      name: "Clean-up",
+      icon: "oneDeleted",
+      description: "Delete one complete goals",
+      target: "numDeletedComplete",
+      quantity: 1,
     }, {
       name: "House Cleaning",
       icon: "fiveDeleted",

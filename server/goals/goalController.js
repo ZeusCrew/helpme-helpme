@@ -42,6 +42,7 @@ module.exports = {
             };
           }
         }
+        if (goal.complete) {user.numComplete += 1}
         user.save();
         res.status(201).json(user.goals);
       });

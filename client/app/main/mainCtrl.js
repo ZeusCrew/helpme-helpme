@@ -180,6 +180,25 @@ function MainController($scope, $timeout, auth, Goals, Friend, Profile) {
       });
   };
 
+  // Retrieves posts for all of the user's goals
+  $scope.getPosts = function() {
+    Profile.getPosts($scope.profile.user_id) 
+      .then(function(data) {
+        var friend = {};
+        friend.firstname = 'Me';
+        friend.lastname = '';
+        friend.username = 'Me';
+        data.posts.forEach(function(post) {
+          post.friend = friend;
+          $scope.posts.push(post);
+        });
+        currentCount = Profile.countComment(data.posts);
+      })
+      .catch(function(error) {
+        console.error(error);
+      });
+  };
+
   $scope.addPost = function() {
     // Check to be sure the text field isn't empty
     if($scope.input.post) {
@@ -248,6 +267,7 @@ function MainController($scope, $timeout, auth, Goals, Friend, Profile) {
   auth.profilePromise.then(function(profile) {
     $scope.profile = profile;
     $scope.getFriendsPosts();
+    $scope.getPosts();
     $scope.getInactiveFriends();
     $scope.getGoals();
     $scope.poller();
