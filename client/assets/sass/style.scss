@@ -152,15 +152,9 @@ a:hover {
 }
 
 #landing {
-  height: 95%;
+  background-image: url(../images/success2.png);
   position: relative;
-}
-
-.landing-img {
-  background: url(../images/success2.png) fixed center;
-  width: 100%;
   min-height: 980px;
-  max-height: 1320px;
 }
 
 .btn-xlg {
@@ -173,8 +167,8 @@ line-height: normal;
 }
 
 #signinup {
+  position: relative;
   margin-top: 5%;
-  float: right;
 }
 
 .signinContainer {
@@ -204,8 +198,8 @@ line-height: normal;
 }
 
 .CTA {
-  color: white;
-  margin-top: 20%;
+  color: #9AD5E8;
+  margin-top: 10%;
 }
 
 .infoBox {
