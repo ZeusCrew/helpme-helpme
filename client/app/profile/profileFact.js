@@ -156,7 +156,7 @@ function Profile($http) {
     checkComment: function(currentCount, newCount, currentPosts, newPosts) {
       for (var post in newCount) {
         // update comments if there are any difference in new and current count
-        if (newCount[post] !== currentCount[post]) {
+        if (newCount[post] > currentCount[post]) {
           this.updateComments(currentCount, currentPosts, newPosts, post);
         }
       }
