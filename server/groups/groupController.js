@@ -20,8 +20,8 @@ module.exports = {
     });
   },
   joinGroup: function(req, res, next){
-    var group_name = req.name;
-    var user = req.user;
+    var group_name = req.body.name;
+    var user = req.body.user;
     Group.findOne({ name: group_name })
       .then(function(group){
         var alreadyAdded = false;
@@ -38,5 +38,26 @@ module.exports = {
           res.sendStatus(200);
         }
       });
+  },
+  getAllGroups: function(req, res, next) {
+    Group.find({})
+      .then(function(groups){
+        res.send(groups);
+      });
+  },
+  getUserGroups: function(req, res, next) {
+    Group.find({})
+      .then(function(groups){
+        var userGroups = [];
+        for(var i = 0; i < groups.length; i++){
+          for(var j = 0; j < groups[i].users.length; j++){
+            if (group[i].users[j] === user){
+              userGroups.push(groups[i]);
+              break;
+            }
+          }
+        }
+        res.send(userGroups);
+      })
   }
 };

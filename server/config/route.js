@@ -35,6 +35,8 @@ module.exports = function(app, express) {
   app.post('/api/comment/:user_id', postController.addComment);
   app.post('/api/signin/', userController.addUser);
 
+  app.get('/api/groups/', groupController.getAllGroups);
+  app.get('/api/groups/user-groups', groupController.getUserGroups);
   app.post('/api/groups/', groupController.createGroup);
   app.post('/api/groups/:group_name', groupController.joinGroup);
 

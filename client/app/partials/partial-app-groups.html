@@ -26,10 +26,42 @@
             placeholder="Excercise, Angular.js, investing?"></textarea>
         </div>
       </div>
-      <div>
-        <button class="btn btn-primary" ng-click="createGroup()">Submit</button>
+      <div class="row">
+        <button class="btn btn-primary pull-right" ng-click="createGroup()">Submit</button>
       </div>
       <br>
     </form>
+  </div>
+  <legend>Groups I'm In</legend>
+  <!-- Panels for each of the user's existing goals -->
+  <div class="group panel" ng-repeat="group in myGroups | orderBy:'-updatedAt'">
+    <!-- Panel heading with goal title and date of last update -->
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-8">Name: {{group.name}}</div>
+        <div class="col-md-8">Interests: {{group.interests}}</div>
+        <div class="col-md-8">Members: {{group.members}}</div>
+      </div>
+    </div>
+  </div>
+  <button class="btn btn-primary pull-right" ng-click="getUserGroups()">View My Groups</button>
+  <legend>All Groups</legend>
+  <!-- Panels for each of the user's existing goals -->
+  <div class="group panel" ng-repeat="group in allGroups | orderBy:'-updatedAt'">
+    <!-- Panel heading with goal title and date of last update -->
+    <div class="panel-heading">
+      <div class="row">
+        <div class="col-md-8">Name: {{group.name}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">Interests: {{group.interests}}</div>
+      </div>
+      <div class="row">
+        <div class="col-md-8">Members: {{group.users}}</div>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary pull-right" ng-click="joinGroup(group.name)">Join</button>
+      </div>
+    </div>
   </div>
 </div>
