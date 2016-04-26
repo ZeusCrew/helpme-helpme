@@ -15,6 +15,7 @@ angular
     'app.friends',
     'app.main',
     'app.viewfriend',
+    'app.groups',
     'ui.router',
     'ui.bootstrap',
     'btford.socket-io',
@@ -90,6 +91,12 @@ function config(authProvider, $stateProvider, $urlRouterProvider, $httpProvider,
       url: '/view/:friendID',
       templateUrl: 'app/partials/partial-app-view-friend.html',
       controller: 'ViewFriendController',
+      data: { requiresLogin: true }
+    })
+    .state('app.groups', {
+      url: '/groups',
+      templateUrl: 'app/partials/partial-app-groups.html',
+      controller: 'GroupController',
       data: { requiresLogin: true }
     });
 

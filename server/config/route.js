@@ -2,6 +2,7 @@ var goalController = require('../goals/goalController');
 var userController = require('../users/userController');
 var postController = require('../posts/postController');
 var achievementController = require('../achievements/achievementController');
+var groupController = require('../groups/groupController');
 var helpers = require('./helper');
 
 module.exports = function(app, express) {
@@ -34,6 +35,11 @@ module.exports = function(app, express) {
 
   app.post('/api/comment/:user_id', postController.addComment);
   app.post('/api/signin/', userController.addUser);
+
+  app.get('/api/groups/', groupController.getAllGroups);
+  app.get('/api/groups/user-groups', groupController.getUserGroups);
+  app.post('/api/groups/', groupController.createGroup);
+  app.post('/api/groups/:group_name', groupController.joinGroup);
 
   // If a request is sent somewhere other than the routes above,
   // send it through our custom error handler
