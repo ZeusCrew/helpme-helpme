@@ -15,7 +15,6 @@ angular
     });
 
     $scope.getAllGroups = function(){
-      console.log('get all', $scope.user)
       Group.getAllGroups().then(function(groups){
         for(var i = 0; i < groups.length; i++){
           var memberList = groups[i].users.join(', ');
@@ -29,7 +28,6 @@ angular
 
 
     $scope.getUserGroups = function(){
-      console.log('get groups', $scope.user);
       var userInfo = {
         user: $scope.user
       };
@@ -39,7 +37,6 @@ angular
     };
 
     $scope.createGroup = function(){
-      console.log($scope.user);
       if($scope.name){
         var group = {
           name: $scope.name,

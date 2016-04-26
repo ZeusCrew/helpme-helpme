@@ -2,6 +2,7 @@ var goalController = require('../goals/goalController');
 var userController = require('../users/userController');
 var postController = require('../posts/postController');
 var achievementController = require('../achievements/achievementController');
+var groupController = require('../groups/groupController');
 var helpers = require('./helper');
 
 module.exports = function(app, express) {

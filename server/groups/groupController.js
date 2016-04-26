@@ -22,7 +22,7 @@ module.exports = {
   joinGroup: function(req, res, next){
     var group_name = req.body.name;
     var user = req.body.user;
-    Group.findOne({ name: group_name })
+    Group.findOneAndUpdate({ name: group_name }, { $push: { "users": user }})
       .then(function(group){
         var alreadyAdded = false;
         for(var i = 0; i < group.users.length; i++){
